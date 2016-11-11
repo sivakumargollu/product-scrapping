@@ -17,8 +17,7 @@ Execution instructions.
 
 
 
-1 .sql to create table is under resource folder. Execute it to create tables.
-
+1. sql to create table is under resource folder. Execute it to create tables.
 
 2. Configure application configuration in AppConfig file.
 
