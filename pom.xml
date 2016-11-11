@@ -4,7 +4,7 @@
     <groupId>com.estrolo.scrapper</groupId>
     <artifactId>products_scrapper</artifactId>
     <packaging>jar</packaging>
-    <version>-DinteractiveMode=false</version>
+    <version>1.0</version>
     <name>products_scrapper</name>
     <url>http://maven.apache.org</url>
     <properties>
