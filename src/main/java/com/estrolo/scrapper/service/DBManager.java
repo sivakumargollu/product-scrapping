@@ -25,8 +25,6 @@ public class DBManager {
     public static Connection getConnection() {
         if (conn == null) {
             try {
-                InputStream input = ServiceMain.class.getClassLoader().getResourceAsStream("src/main/application.properties");
-                prop.load(input);
                 Class.forName(driver);
                 conn = DriverManager.getConnection(AppConfig.props.get("url"), AppConfig.props.get("username"), AppConfig.props.get("password"));
             } catch (Exception e) {
