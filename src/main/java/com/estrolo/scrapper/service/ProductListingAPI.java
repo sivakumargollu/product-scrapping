@@ -1,7 +1,5 @@
 package com.estrolo.scrapper.service;
 
-import com.sleepycat.je.Database;
-
 import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
@@ -17,13 +15,14 @@ public class ProductListingAPI {
     @GET
     @Produces(MediaType.APPLICATION_JSON)
     @Path("/{queryId}")
-    public List<ProductInfo> getProudcts(@PathParam("queryId") int queryId){
-      return dbManager.getProducts(queryId);
+    public List<ProductInfo> getProudcts(@PathParam("queryId") int queryId) {
+        return dbManager.getProducts(queryId);
     }
+
     @POST
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public void insertProducts(List<ProductInfo> list){
+    public void insertProducts(List<ProductInfo> list) {
         dbManager.insertProducts(list);
     }
 }

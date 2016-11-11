@@ -28,7 +28,7 @@ public class DBManager {
                 InputStream input = ServiceMain.class.getClassLoader().getResourceAsStream("src/main/application.properties");
                 prop.load(input);
                 Class.forName(driver);
-                conn = DriverManager.getConnection(AppConfig.props.get("url"), AppConfig.props.get("username"),AppConfig.props.get("password"));
+                conn = DriverManager.getConnection(AppConfig.props.get("url"), AppConfig.props.get("username"), AppConfig.props.get("password"));
             } catch (Exception e) {
                 e.printStackTrace();
             }
@@ -77,25 +77,24 @@ public class DBManager {
             e.printStackTrace();
         }
     }
-    public int insertSearchTag(String searchStr){
+
+    public int insertSearchTag(String searchStr) {
         int searchQueryID = 0;
 
         try {
-            PreparedStatement statement = getConnection().prepareStatement("insert into products.search_quries(query) values(" + searchStr + ")",Statement.RETURN_GENERATED_KEYS);
-            int rows =  statement.executeUpdate();
-            if(rows == 0){
+            PreparedStatement statement = getConnection().prepareStatement("insert into products.search_quries(query) values(" + searchStr + ")", Statement.RETURN_GENERATED_KEYS);
+            int rows = statement.executeUpdate();
+            if (rows == 0) {
                 logger.info("Failed to insert");
-            }
-            else{
+            } else {
                 ResultSet generatedKeys = statement.getGeneratedKeys();
                 if (generatedKeys.next()) {
                     searchQueryID = generatedKeys.getInt(1);
-                }
-                else {
+                } else {
                     throw new SQLException("Creating user failed, no ID obtained.");
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return searchQueryID;
