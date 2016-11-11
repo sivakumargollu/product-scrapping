@@ -1,0 +1,21 @@
+<html>
+<title>Listing out products</title>
+<head></head>
+<body>
+<div id="Main" align=center>
+    <form id="mainform" method="post" action="/products/scrapper">
+        <table>
+            <tr>
+                <td>Search query</td><td><input type="text" name="searchQuery"/></td>
+            </tr>
+            <tr>
+                <td>Limit</td><td><input type="text" name="maxCount"/></td>
+            </tr>
+            <tr>
+                <td><input type="submit" name="fetch" value="Fetch"/></td>
+            </tr>
+        </table>
+    </form>
+</div>
+</body>
+</html>
