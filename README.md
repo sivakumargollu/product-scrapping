@@ -12,7 +12,15 @@ searchQueryID
 ------------
 It's an auto-generated Id when search-query saved into table(Table name:search_quries)
 
-.sql to create table is under resource folder. Please execute it before.
+Execution instructions.
+
+
+
+1 .sql to create table is under resource folder. Execute it to create tables.
+2. Configure application configuration in AppConfig file.
+3. Package file using mvn clean package
+4. Run jar using java -jar /patt/to/generated.jar
+ 
 
 
 

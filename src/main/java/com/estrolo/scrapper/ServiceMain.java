@@ -21,7 +21,7 @@ public class ServiceMain {
         initParams.put("com.sun.jersey.config.property.packages", "com.estrolo.scrapper.service");
         try {
             GrizzlyWebContainerFactory.create(baseUri, initParams);
-            logger.info(String.format("Service started at" + baseUri));
+            logger.info(String.format("Service started at   " + baseUri));
         } catch (Exception e) {
             e.printStackTrace();
         }
