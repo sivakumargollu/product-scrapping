@@ -26,7 +26,7 @@ public class DBManager {
         if (conn == null) {
             try {
                 Class.forName(driver);
-                conn = DriverManager.getConnection(AppConfig.props.get("url"), AppConfig.props.get("username"), AppConfig.props.get("password"));
+                conn = DriverManager.getConnection(AppConfig.props.get("url"), AppConfig.props.get("dbusername"), AppConfig.props.get("dbpassword"));
             } catch (Exception e) {
                 e.printStackTrace();
             }

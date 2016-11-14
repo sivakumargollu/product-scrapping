@@ -14,6 +14,7 @@ public class ServiceMain {
 
     public static void main(String[] args) {
         BasicConfigurator.configure();//log4j config
+        AppConfig.init();
         String baseUri = AppConfig.props.get("baseUri");
         baseUri = (baseUri != null) ? baseUri : "http://localhost:7070/";
         logger.info("base uri" + baseUri);
